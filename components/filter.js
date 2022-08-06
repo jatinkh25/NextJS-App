@@ -3,7 +3,7 @@ import FilterContext from '../context/filter'
 import Select from './select'
 import { State, City } from 'country-state-city'
 
-const Filter = () => {
+const Filter = ({ setToggle }) => {
 	const { filterState, filterCity, setFilterState, setFilterCity } =
 		useContext(FilterContext)
 
@@ -46,7 +46,10 @@ const Filter = () => {
 					name='City'
 					options={getUpdatedCities(filterState.value)}
 					value={filterCity}
-					onClick={(value) => setFilterCity(value)}
+					onClick={(value) => {
+						setFilterCity(value)
+						setToggle(false)
+					}}
 				/>
 			</div>
 		</div>

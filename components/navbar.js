@@ -60,7 +60,7 @@ const Navbar = () => {
 					<span>Filters</span>
 				</div>
 				<div className={filterToggle ? 'show_filter' : 'hide_filter'}>
-					<Filter />
+					<Filter setToggle={setFilterToggle} />
 				</div>
 			</div>
 		</nav>
